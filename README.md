@@ -1,18 +1,45 @@
-# Salesforce DX Project: Next Steps
+# 🤖 AI Lead Agent - Salesforce
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+[![Deployed on](https://img.shields.io/badge/Deployed%20on-Salesforce-00A1E0?logo=salesforce&logoColor=white)](https://developer.salesforce.com/)
+[![API Integration](https://img.shields.io/badge/Integrated%20with-OpenAI-000000?logo=openai&logoColor=white)](https://openai.com/api)
+[![Built With](https://img.shields.io/badge/Built%20With-Apex%20%26%20LWC-1798c1?logo=salesforce&logoColor=white)](https://developer.salesforce.com/docs/component-library/overview/components)
+[![Backend](https://img.shields.io/badge/Backend-Apex-blue?logo=java&logoColor=white)]()
+[![Frontend](https://img.shields.io/badge/Frontend-LWC-yellow?logo=javascript&logoColor=white)]()
+![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg)
 
-## How Do You Plan to Deploy Your Changes?
+---
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+### A Salesforce + OpenAI integration that brings AI-Powered Lead Management Assistant into Salesforce ⚡  
 
-## Configure Your Salesforce DX Project
+A full-stack app built with **Apex**, **Lightning Web Components**, and the **OpenAI API**.  
+Predicts lead quality (0–100), ranks prospects, and enhances CRM intelligence for marketing and sales teams.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+---
 
-## Read All About It
+## 🧩 Tech Highlights
+- 🧠 **AI Scoring** — GPT-4 Turbo assigns predictive scores based on lead data  
+- 🧩 **Full-Stack Salesforce App** — Apex backend + LWC frontend  
+- 🔒 **Secure API Auth** — Managed through Salesforce Named Credentials  
+- ⚙️ **SOQL + REST Integration** — Seamless CRM + AI data pipeline  
+- 📊 **Dynamic UI** — Real-time lead updates with reactive Lightning components  
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/Cossra/AI.salesforce.agent.git
+cd AI.salesforce.agent
+
+# Authenticate your Salesforce Developer Org
+sfdx auth:web:login -a DevOrg
+
+# Deploy backend classes
+sfdx force:source:deploy -p force-app/main/default/classes
+
+# Deploy Lightning Web Component
+sfdx force:source:deploy -p force-app/main/default/lwc/aiLeadScoring
+
+# Open Salesforce
+sfdx force:org:open
