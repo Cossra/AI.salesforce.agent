@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="AI Lead Scoring Tool" icon-name="standard:lead">
+        <div class="slds-p-around_medium">
+            <lightning-button 
+                label="Fetch Leads" 
+                onclick={handleFetchLeads} 
+                class="slds-m-bottom_medium">
+            </lightning-button>
+
+            <template if:true={leads}>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th scope="col"><div class="slds-truncate">Name</div></th>
+                            <th scope="col"><div class="slds-truncate">Company</div></th>
+                            <th scope="col"><div class="slds-truncate">Industry</div></th>
+                            <th scope="col"><div class="slds-truncate">AI Score</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template for:each={leads} for:item="lead">
+                            <tr key={lead.Id}>
+                                <td>{lead.Name}</td>
+                                <td>{lead.Company}</td>
+                                <td>{lead.Industry}</td>
+                                <td>
+                                    <lightning-badge label={lead.Score}></lightning-badge>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-text-color_error slds-m-top_medium">{error}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
