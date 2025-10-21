@@ -9,17 +9,16 @@
 
 ### A Salesforce + OpenAI integration that brings AI-Powered Lead Management Assistant into Salesforce ⚡  
 
-A full-stack app built with **Apex**, **Lightning Web Components**, and the **OpenAI API**.  
-Predicts lead quality (0–100), ranks prospects, and enhances CRM intelligence for marketing and sales teams.
+Built with **Apex**, **Lightning Web Components**, and the **OpenAI API**, it predicts lead quality (0–100), ranks prospects, and enhances CRM intelligence for marketing and sales teams.
 
 ---
 
 ## 🧩 Tech Highlights
-- 🧠 **AI Scoring** — GPT-4 Turbo assigns predictive scores based on lead data  
-- 🧩 **Full-Stack Salesforce App** — Apex backend + LWC frontend  
+- 🔗 **OpenAI API Integration** — Connects Salesforce to GPT-4 Turbo for real-time AI insights and predictive lead scoring
+- 🧩 **Full-Stack Salesforce App** — Apex backend + Lightning Web Components frontend
 - 🔒 **Secure API Auth** — Managed through Salesforce Named Credentials  
 - ⚙️ **SOQL + REST Integration** — Seamless CRM + AI data pipeline  
-- 📊 **Dynamic UI** — Real-time lead updates with reactive Lightning components  
+- 📊 **Dynamic UI** — Real-time lead updates with responsive Lightning components  
 
 ---
 
@@ -30,14 +29,15 @@ Predicts lead quality (0–100), ranks prospects, and enhances CRM intelligence 
 git clone https://github.com/Cossra/AI.salesforce.agent.git
 cd AI.salesforce.agent
 
-# Authenticate your Salesforce Developer Org
-sfdx auth:web:login -a DevOrg
+# Log in to your Salesforce Developer Org
+sf org login web --alias DevOrg
 
-# Deploy backend classes
-sfdx force:source:deploy -p force-app/main/default/classes
+# Deploy backend Apex classes
+sf project deploy start --source-dir force-app/main/default/classes
 
 # Deploy Lightning Web Component
-sfdx force:source:deploy -p force-app/main/default/lwc/aiLeadScoring
+sf project deploy start --source-dir force-app/main/default/lwc/aiLeadScoring
 
-# Open Salesforce
-sfdx force:org:open
+# Open the org
+sf org open
+
