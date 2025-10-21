@@ -13,18 +13,21 @@ Built with **Apex**, **Lightning Web Components**, and the **OpenAI API**, it pr
 
 ---
 
-🖼️ **Demo**  
-<img width="1721" height="862" alt="Screenshot 2025-10-21 at 5 00 57 PM" src="https://github.com/user-attachments/assets/91358b49-bc76-4876-97c8-cf3ec63f1f15" />
-<img width="1717" height="865" alt="Screenshot 2025-10-21 at 5 00 29 PM" src="https://github.com/user-attachments/assets/dc749c47-714d-414f-855a-2423805efe60" />
-
----
-
 ## 🧩 Tech Highlights
 - 🔗 **OpenAI API Integration** — Connects Salesforce to GPT-4 Turbo for real-time AI insights and predictive lead scoring
 - 🧩 **Full-Stack Salesforce App** — Apex backend + Lightning Web Components frontend
 - 🔒 **Secure API Auth** — Managed through Salesforce Named Credentials  
 - ⚙️ **SOQL + REST Integration** — Seamless CRM + AI data pipeline  
 - 📊 **Dynamic UI** — Real-time lead updates with responsive Lightning components  
+
+---
+
+🖼️ **Demo**  
+<img width="1721" height="862" alt="Screenshot 2025-10-21 at 5 00 57 PM" src="https://github.com/user-attachments/assets/91358b49-bc76-4876-97c8-cf3ec63f1f15" />
+
+---
+
+<img width="1717" height="865" alt="Screenshot 2025-10-21 at 5 00 29 PM" src="https://github.com/user-attachments/assets/dc749c47-714d-414f-855a-2423805efe60" />
 
 ---
 
