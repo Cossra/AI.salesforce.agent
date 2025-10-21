@@ -1,40 +1,56 @@
 <template>
-    <lightning-card title="AI Lead Scoring Tool" icon-name="standard:lead">
-        <div class="slds-p-around_medium">
-            <lightning-button 
-                label="Fetch Leads" 
-                onclick={handleFetchLeads} 
-                class="slds-m-bottom_medium">
-            </lightning-button>
+    <div class="full-width-bg">
+        <div class="lead-agent-container">
+            <h1 class="title">🤖 AI Leads Agent</h1>
 
-            <template if:true={leads}>
-                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
-                    <thead>
-                        <tr class="slds-line-height_reset">
-                            <th scope="col"><div class="slds-truncate">Name</div></th>
-                            <th scope="col"><div class="slds-truncate">Company</div></th>
-                            <th scope="col"><div class="slds-truncate">Industry</div></th>
-                            <th scope="col"><div class="slds-truncate">AI Score</div></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <template for:each={leads} for:item="lead">
-                            <tr key={lead.Id}>
-                                <td>{lead.Name}</td>
-                                <td>{lead.Company}</td>
-                                <td>{lead.Industry}</td>
-                                <td>
-                                    <lightning-badge label={lead.Score}></lightning-badge>
-                                </td>
-                            </tr>
-                        </template>
-                    </tbody>
-                </table>
+
+            <div class="form two-column-form">
+                <div class="form-left">
+                    <lightning-input name="leadName" label="Lead Name" value={leadName} onchange={handleInputChange}></lightning-input>
+                    <lightning-input name="company" label="Company" value={company} onchange={handleInputChange}></lightning-input>
+                    <lightning-input name="industry" label="Industry" value={industry} onchange={handleInputChange}></lightning-input>
+                </div>
+                <div class="form-right">
+                    <lightning-textarea name="description" label="Lead Description" value={description} onchange={handleInputChange}></lightning-textarea>
+                </div>
+            </div>
+
+
+            <lightning-button
+                variant="brand"
+                label="Generate Insights"
+                title="Score Lead"
+                onclick={handleScoreLead}
+                class="btn-generate"
+                disabled={loading}>
+            </lightning-button>
+            <div style="height:24px;width:100%"></div>
+
+            <template if:true={loading}>
+                <div class="spinner">
+                    <lightning-spinner alternative-text="Analyzing..." size="medium"></lightning-spinner>
+                </div>
             </template>
 
-            <template if:true={error}>
-                <div class="slds-text-color_error slds-m-top_medium">{error}</div>
+            <template if:true={aiResult}>
+                <div class="result-box centered-result-box">
+                    <h2 class="result-title">⚡ Lead Insights</h2>
+
+                    <template if:true={aiResult.score}>
+                        <p class="score-line">
+                            <strong>Score:</strong> {aiResult.score}/100
+                            <span class="divider">•</span>
+                            <strong>Likelihood:</strong> {aiResult.likelihood}
+                        </p>
+                        <p class="recommendation-label"><strong>Recommendation:</strong></p>
+                        <p class="recommendation-text">{aiResult.recommendation}</p>
+                    </template>
+
+                    <template if:true={aiResult.raw}>
+                        <pre>{aiResult.raw}</pre>
+                    </template>
+                </div>
             </template>
         </div>
-    </lightning-card>
+    </div>
 </template>
